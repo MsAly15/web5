@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Dashboard</h1>
+        <nav>
+            <ul id="nav-links">
+                <li><a href="enrollment.html">Enrollment</a></li>
+                <li><a href="grades.html">Grades</a></li>
+                <li><a href="attendance.html">Attendance</a></li>
+                <li><a href="communication.html">Communication</a></li>
+                <li><a href="index.html">Logout</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main id="main-content">
+        <center>
+            <img src="download.jfif" alt="logo" class="imaged">
+        </center>
+
+        <div id="student-ui" style="display:none;">
+            <h2>Welcome, Student!</h2>
+            <p>View your grades, assignments, and attendance here.</p>
+            <!-- Add student-specific content here -->
+        </div>
+
+        <div id="teacher-ui" style="display:none;">
+            <h2>Welcome, Teacher!</h2>
+            <p>Manage grades and view student performance here.</p>
+            <button onclick="inputGrades()">Input Grades</button>
+            <!-- Add teacher-specific content here -->
+        </div>
+
+        <div id="admin-ui" style="display:none;">
+            <h2>Welcome, Admin!</h2>
+            <p>Manage users and oversee operations here.</p>
+            <!-- Add admin-specific content here -->
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 School Management System</p>
+    </footer>
+
+    <script>
+        // Simulated user role (this should come from your login logic)
+        const userRole = localStorage.getItem('userRole'); // Store the user role in local storage after login
+
+        // Display the appropriate UI based on the user role
+        if (userRole === 'student') {
+            document.getElementById('student-ui').style.display = 'block';
+        } else if (userRole === 'teacher') {
+            document.getElementById('teacher-ui').style.display = 'block';
+        } else if (userRole === 'admin') {
+            document.getElementById('admin-ui').style.display = 'block';
+        } else {
+            alert("Unauthorized access!");
+        }
+
+        function inputGrades() {
+            alert("Grade input functionality is not implemented yet.");
+        }
+    </script>
+</body>
+</html>
+

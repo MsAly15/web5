@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Login</h1>
+    </header>
+
+    <main class="main">
+        <form id="loginForm" onsubmit="return handleLogin(event);">
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required> 
+
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+            
+            <center>
+                <input type="submit" value="Login" class="login-button">
+                <button type="button" onclick="showSignup()">Sign Up</button>
+            </center>
+        </form>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 School Management System</p>
+    </footer>
+
+    <script>
+        function handleLogin(event) {
+            event.preventDefault();
+
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+
+            // Simulate login and user role assignment
+            let userRole;
+
+            // Example logic for user roles; this should be replaced with actual authentication logic
+            if (username === "student" && password === "student123") {
+                userRole = 'student';
+            } else if (username === "teacher" && password === "teacher123") {
+                userRole = 'teacher';
+            } else if (username === "admin" && password === "admin123") {
+                userRole = 'admin';
+            } else {
+                alert("Invalid credentials");
+                return false; // Prevent form submission
+            }
+
+            // Store user role in local storage
+            localStorage.setItem('userRole', userRole);
+
+            // Redirect to the dashboard based on the user role
+            window.location.href = 'dashboard.html'; // Change to your actual dashboard file
+        }
+
+        function showSignup() {
+            alert("Sign up functionality is not implemented yet.");
+        }
+    </script>
+</body>
+</html>
+

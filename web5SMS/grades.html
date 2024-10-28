@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View Grades</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>View Grades</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="grades.html">Grades</a></li>
+                <li><a href="attendance.html">Attendance</a></li>
+                <li><a href="communication.html">Communication</a></li>
+                <li><a href="index.html">Logout</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main id="main-content">
+        <h2>Grade Records</h2>
+
+        <!-- Example for Grade 7 -->
+        <section class="grade-table">
+            <h3>Grade 7</h3>
+            <p>Section: A | Adviser: Mr. Santos</p>
+            <table border="1" >
+                <thead>
+                    <tr>
+                        <th scope="col">Subject</th>
+                        <th scope="col">Grade</th>
+                        <th scope="col">Units</th>
+                        <th scope="col">Teacher</th>
+                        <th scope="col">Remarks</th>
+                        <th scope="col" class="edit-column">Edit</th> <!-- Added Edit column -->
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Math</td>
+                        <td>75</td>
+                        <td>3</td>
+                        <td>Ms. Lei</td>
+                        <td>Passed</td>
+                        <td class="edit-column"><button>Edit</button></td> <!-- Edit button -->
+                    </tr>
+                    <tr>
+                        <td>English</td>
+                        <td>80</td>
+                        <td>3</td>
+                        <td>Mr. Cruz</td>
+                        <td>Passed</td>
+                        <td class="edit-column"><button>Edit</button></td>
+                    </tr>
+                    <tr>
+                        <td>Science</td>
+                        <td>65</td>
+                        <td>3</td>
+                        <td>Ms. Reyes</td>
+                        <td>Failed</td>
+                        <td class="edit-column"><button>Edit</button></td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <!-- Add similar sections for Grades 8, 9, and 10 with updated tables -->
+
+        <div id="input-grades" style="display: none;">
+            <button>Add Grades</button>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 School Management System</p>
+    </footer>
+
+    <script>
+        // Simulate user role (change as needed)
+        const userRole = 'teacher'; // Options: 'student', 'teacher', 'admin'
+
+        // Display content based on user role
+        const mainContent = document.getElementById('main-content');
+        const inputGradesButton = document.getElementById('input-grades');
+
+        if (userRole === 'student') {
+            // Student view - no edit buttons, no Add Grades button
+            document.querySelectorAll('.edit-column').forEach(col => col.style.display = 'none');
+            inputGradesButton.style.display = 'none';
+        } else if (userRole === 'teacher') {
+            // Teacher view - show edit buttons and Add Grades button
+            document.querySelectorAll('.edit-column').forEach(col => col.style.display = 'table-cell');
+            inputGradesButton.style.display = 'block';
+        } else if (userRole === 'admin') {
+            // Admin view - no edit buttons, no Add Grades button
+            document.querySelectorAll('.edit-column').forEach(col => col.style.display = 'none');
+            inputGradesButton.style.display = 'none';
+        }
+    </script>
+</body>
+</html>
+
+
+

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Communication</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Communication</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="enrollment.html">Enrollment</a></li>
+                <li><a href="grades.html">Grades</a></li>
+                <li><a href="attendance.html">Attendance</a></li>
+                <li><a href="index.html">Logout</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h2>Message Board</h2>
+        <form id="messageForm">
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" required></textarea>
+            <input type="submit" value="Send Message">
+        </form>
+        
+        <h3>Previous Messages</h3>
+        <ul>
+            <!-- Example message -->
+            <li>Teacher: Please submit your assignments by Friday.</li>
+            <!-- More messages will be dynamically generated -->
+        </ul>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 School Management System</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
